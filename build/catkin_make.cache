@@ -1,0 +1,2 @@
+detect_aruco:interiit21
+-DCATKIN_DEVEL_PREFIX=/home/akhil-manoj/drdo/devel -DCMAKE_INSTALL_PREFIX=/home/akhil-manoj/drdo/install -G Unix Makefiles

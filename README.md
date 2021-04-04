@@ -33,7 +33,7 @@ The drone recieves depth camera images and binarizes it using OpenCV such that o
   * Setup the environment
   ```py
   > echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+  > source ~/.bashrc
   ```
 
   * Dependencies
@@ -181,4 +181,3 @@ source ~/.bashrc
   > cd src/marker_navigator-master/src
   > rosrun marker_navigator-master moveDrone.py
   ```
-  

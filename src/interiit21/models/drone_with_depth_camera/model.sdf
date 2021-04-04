@@ -11,7 +11,7 @@
     </include>
 
     <link name="depth_cam_link">
-      <pose>0 0 -0.02 0 0 0 </pose>
+      <pose>0 0 -0.02 0 0 3.14 </pose>
       <inertial>
         <mass>0.01</mass>
         <inertia>
@@ -29,7 +29,7 @@
           </geometry>
         </collision> -->
       <visual name='depth_cam_link'>
-    	<pose>0 0 0.15 0 1.5707 0</pose>
+    	<pose>0 0 0.15 0 1.5707 3.14</pose>
     	<geometry>
     		<cylinder>
     			<radius>.005</radius>
@@ -59,14 +59,14 @@
       <alwaysOn>true</alwaysOn>
       <updateRate>10.0</updateRate>
       <cameraName>depth_camera</cameraName>
-      <imageTopicName>/depth_camera/rgb/image_raw</imageTopicName>
-      <cameraInfoTopicName>/depth_cameracamera/color/camera_info</cameraInfoTopicName>
+      <imageTopicName>/depth_camera/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/depth_camera/color/camera_info</cameraInfoTopicName>
       <depthImageTopicName>/depth_camera/depth/image_raw</depthImageTopicName>
-      <depthImageInfoTopicName>/depth_cameracamera/depth/camera_info</depthImageInfoTopicName>
-      <pointCloudTopicName>depth/points</pointCloudTopicName>
-      <frameName>camera_link_optical</frameName>
+      <depthImageInfoTopicName>/depth_camera/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/depth_camera/depth/points</pointCloudTopicName>
+      <frameName>/depth_cam_link</frameName>
       <pointCloudCutoff>0.4</pointCloudCutoff>
-      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <pointCloudCutoffMax>4.5</pointCloudCutoffMax>
       <distortionK1>0.0</distortionK1>
       <distortionK2>0.0</distortionK2>
       <distortionK3>0.0</distortionK3>
@@ -82,11 +82,15 @@
   
      </sensor>
     </link>
+
+
+    
     <joint name="depth_camera_mount" type="fixed">
       <child>depth_cam_link</child>
       <parent>iris::base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+<!--       	<use_parent_model_frame>true</use_parent_model_frame>
+ -->        <xyz>0 0 1</xyz>
         <limit>
           <upper>0</upper>
           <lower>0</lower>
@@ -107,8 +111,8 @@
           <upper>0</upper>
         </limit>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
+<!--         <use_parent_model_frame>true</use_parent_model_frame>
+ -->      </axis>
     </joint>
     
  
@@ -246,6 +250,8 @@
       <upward>0 0 1</upward>
       <link_name>iris::rotor_3</link_name>
     </plugin>
+
+    
     <plugin name="arducopter_plugin" filename="libArduPilotPlugin.so">
       <fdm_addr>127.0.0.1</fdm_addr>
       <fdm_port_in>9002</fdm_port_in>

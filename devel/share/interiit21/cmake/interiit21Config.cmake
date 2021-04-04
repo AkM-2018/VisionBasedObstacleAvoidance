@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(interiit21_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/akhil-manoj/drdo/devel/include;/home/akhil-manoj/drdo/src/interiit21/include " STREQUAL " ")
   set(interiit21_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/akhil-manoj/drdo/devel/include;/home/akhil-manoj/drdo/src/interiit21/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT " " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "interiit21")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/akhil-manoj/drdo/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/akhil-manoj/drdo/devel/lib;/home/akhil-manoj/drdo/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(interiit21_EXPORTED_TARGETS "")
+set(interiit21_EXPORTED_TARGETS "interiit21_generate_messages_cpp;interiit21_generate_messages_eus;interiit21_generate_messages_lisp;interiit21_generate_messages_nodejs;interiit21_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${interiit21_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${interiit21_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "roscpp;std_msgs;mavros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND interiit21_EXPORTED_TARGETS ${${interiit21_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "interiit21-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${interiit21_DIR}/${extra})

@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "interiit21-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "SetAttitude" :depends-on ("_package_SetAttitude"))
+    (:file "_package_SetAttitude" :depends-on ("_package"))
+    (:file "SetAttitudeYawRate" :depends-on ("_package_SetAttitudeYawRate"))
+    (:file "_package_SetAttitudeYawRate" :depends-on ("_package"))
+    (:file "SetPosition" :depends-on ("_package_SetPosition"))
+    (:file "_package_SetPosition" :depends-on ("_package"))
+    (:file "SetPositionYawRate" :depends-on ("_package_SetPositionYawRate"))
+    (:file "_package_SetPositionYawRate" :depends-on ("_package"))
+    (:file "SetRates" :depends-on ("_package_SetRates"))
+    (:file "_package_SetRates" :depends-on ("_package"))
+    (:file "SetRatesYaw" :depends-on ("_package_SetRatesYaw"))
+    (:file "_package_SetRatesYaw" :depends-on ("_package"))
+    (:file "SetVelocity" :depends-on ("_package_SetVelocity"))
+    (:file "_package_SetVelocity" :depends-on ("_package"))
+    (:file "SetVelocityYawRate" :depends-on ("_package_SetVelocityYawRate"))
+    (:file "_package_SetVelocityYawRate" :depends-on ("_package"))
+  ))

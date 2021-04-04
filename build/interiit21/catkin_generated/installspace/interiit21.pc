@@ -3,6 +3,6 @@ prefix=/home/akhil-manoj/drdo/install
 Name: interiit21
 Description: Description of interiit21
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -linteriit21
+Requires: roscpp std_msgs mavros

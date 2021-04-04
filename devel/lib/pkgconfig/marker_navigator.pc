@@ -1,0 +1,8 @@
+prefix=/home/akhil-manoj/drdo/devel
+
+Name: marker_navigator
+Description: Description of marker_navigator
+Version: 0.0.1
+Cflags: -I/home/akhil-manoj/drdo/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

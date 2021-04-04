@@ -131,8 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/akhil-manoj/drdo/build/gtest/cmake_install.cmake")
-  include("/home/akhil-manoj/drdo/build/interiit21/cmake_install.cmake")
+  include("/home/akhil-manoj/drdo/build/pysdf/cmake_install.cmake")
   include("/home/akhil-manoj/drdo/build/detect_aruco/cmake_install.cmake")
+  include("/home/akhil-manoj/drdo/build/marker_navigator-master/cmake_install.cmake")
+  include("/home/akhil-manoj/drdo/build/interiit21/cmake_install.cmake")
 
 endif()
 

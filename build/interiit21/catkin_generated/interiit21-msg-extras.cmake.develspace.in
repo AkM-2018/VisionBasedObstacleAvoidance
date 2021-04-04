@@ -1,0 +1,2 @@
+set(interiit21_MESSAGE_FILES "")
+set(interiit21_SERVICE_FILES "/home/akhil-manoj/drdo/src/interiit21/srv/SetPosition.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetPositionYawRate.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetVelocity.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetVelocityYawRate.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetAttitude.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetAttitudeYawRate.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetRatesYaw.srv;/home/akhil-manoj/drdo/src/interiit21/srv/SetRates.srv")
